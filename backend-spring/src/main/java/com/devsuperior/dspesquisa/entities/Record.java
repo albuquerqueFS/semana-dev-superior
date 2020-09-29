@@ -21,9 +21,11 @@ public class Record implements Serializable {
     @JoinColumn(name = "game_id")
     private Game game;
 
-    public Record() {}
+    public Record() {
+    }
 
     public Record(Long id, String name, Integer age, Instant moment, Game game) {
+        super();
         this.id = id;
         this.name = name;
         this.age = age;
@@ -76,7 +78,7 @@ public class Record implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Record record = (Record) o;
-        return id.equals(record.id);
+        return Objects.equals(id, record.id);
     }
 
     @Override

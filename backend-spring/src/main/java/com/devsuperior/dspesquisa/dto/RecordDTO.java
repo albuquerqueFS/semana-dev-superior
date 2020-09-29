@@ -17,16 +17,18 @@ public class RecordDTO implements Serializable {
     private Platform gamePlatform;
     private String genreName;
 
-    public RecordDTO() {}
+    public RecordDTO(){
 
-    public RecordDTO(Record entity) {
-        this.id = entity.getId();
-        this.moment = entity.getMoment();
-        this.name = entity.getName();
-        this.age = entity.getAge();
-        this.gameTitle = entity.getGame().getTitle();
-        this.gamePlatform = entity.getGame().getPlatform();
-        this.genreName = entity.getGame().getGenre().getName();
+    }
+
+    public RecordDTO(Record entity){
+        id = entity.getId();
+        moment = entity.getMoment();
+        name = entity.getName();
+        age = entity.getAge();
+        gameTitle = entity.getGame().getTitle();
+        gamePlatform = entity.getGame().getPlatform();
+        genreName = entity.getGame().getGenre().getName();
     }
 
     public Long getId() {
@@ -84,5 +86,4 @@ public class RecordDTO implements Serializable {
     public void setGenreName(String genreName) {
         this.genreName = genreName;
     }
-
 }
